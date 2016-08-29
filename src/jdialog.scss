@@ -1,5 +1,11 @@
 @import "mixin";
 
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: auto;
+}
+
 .jDialog {
   position: fixed;
   top: 15%;
@@ -26,7 +32,7 @@
   left: 0;
   right: 0;
   z-index: 9999;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.4);
 }
 
 // fade-in
@@ -92,3 +98,4 @@
   @include transform(rotateY(0deg));
 }
 
+// let me in

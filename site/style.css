@@ -1,17 +1,39 @@
 body {
-    background: lightblue;
+    background: #22283D;
     font-family: 'Lato', Calibri, Arial, sans-serif;
 }
 
+/* latin */
+@font-face {
+    font-family: 'Vollkorn';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Vollkorn Regular'), local('Vollkorn-Regular'), url(https://fonts.gstatic.com/s/vollkorn/v6/idGKtgpe38okB6bfeHMsLHYhjbSpvc47ee6xR_80Hnw.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
 .container {
+    color: white;
+    width: 90%;
+    max-width: 760px;
+    margin: 0 auto;
+    font-family: 'Vollkorn', serif;
+}
+
+.container h1 {
     text-align: center;
+}
+
+.container p {
+    line-height: 1.5rem;
 }
 
 .button {
     border: none;
     outline: none;
     padding: 0.6em 1.2em;
-    background: #c0392b;
+    margin: 0 6px;
+    background: #a73141;
     color: #fff;
     font-size: 1em;
     letter-spacing: 1px;
@@ -21,11 +43,11 @@ body {
 }
 
 .button:hover {
-    background: #9e2f24;
+    background: #cb3b4f;
 }
 
 .demo {
-    background: #e74c3c;
+    background: #ee455d;
     color: white;
 }
 

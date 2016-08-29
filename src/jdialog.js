@@ -6,12 +6,15 @@ require('./jdialog.scss');
         return this.each(function () {
 
             var settings = $.extend({
+                skinClassName: '',
                 animationType: 'fade-in',
-                skinClassName: ''
+                allowOverlay: true
             }, options);
 
             function closeDialog() {
-                $overlay.get(0).remove();
+                if(settings.allowOverlay) {
+                    $overlay.get(0).remove();
+                }
                 $dialog.removeClass('show');
             }
 
@@ -19,14 +22,18 @@ require('./jdialog.scss');
             var $content = $('<div class="jDialog-content"></div>').addClass(settings.skinClassName).append($dialog.html());
             $dialog.empty().append($content).addClass(settings.animationType);
 
-            var $overlay = $('<div class="jDialog-overlay"></div>');
-            $overlay.click(closeDialog);
+            if(settings.allowOverlay) {
+                var $overlay = $('<div class="jDialog-overlay"></div>');
+                $overlay.click(closeDialog);
+            }
 
             $dialog.find('[data-dismiss="JDialog"]').click(closeDialog);
 
             var $trigger = $('[data-toggle="JDialog"][data-target=' + $dialog.attr('id') + ']');
             $trigger.click(function () {
-                $('body').append($overlay);
+                if(settings.allowOverlay) {
+                    $('body').append($overlay);
+                }
                 $dialog.addClass('show');
             });
         });
