@@ -1,0 +1,49 @@
+body {
+    background: lightblue;
+    font-family: 'Lato', Calibri, Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+.button {
+    border: none;
+    outline: none;
+    padding: 0.6em 1.2em;
+    background: #c0392b;
+    color: #fff;
+    font-size: 1em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background: #9e2f24;
+}
+
+.demo {
+    background: #e74c3c;
+    color: white;
+}
+
+.demo .content h3 {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.1);
+    margin: 0;
+    padding: 14px 0;
+    font-size: 28px;
+    font-weight: 100;
+}
+
+.demo .content > div {
+    padding: 24px 36px;
+    line-height: 1.5rem;
+}
+
+.demo .content > div .button {
+    display: block;
+    margin: 24px auto 0;
+}

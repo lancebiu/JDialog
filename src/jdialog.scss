@@ -1,0 +1,94 @@
+@import "mixin";
+
+.jDialog {
+  position: fixed;
+  top: 15%;
+  left: 50%;
+  z-index: 10000;
+  @include transform(translateX(-50%));
+  visibility: hidden;
+}
+
+.jDialog.show {
+  visibility: visible;
+}
+
+.jDialog-content {
+  background: white;
+  border-radius: 3px;
+  @include box-shadow(0 0 5px rgba(0, 0, 0, 0.4));
+}
+
+.jDialog-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+// fade-in
+
+.fade-in .jDialog-content {
+  opacity: 0;
+  @include transform(scale(0.7));
+  @include transition(all 0.3s);
+}
+
+.fade-in.jDialog.show .jDialog-content {
+  opacity: 1;
+  @include transform(scale(1));
+}
+
+// sticky up
+
+.sticky-up.jDialog {
+  top: 0;
+  @include transform(translateX(-50%));
+}
+
+.sticky-up.jDialog .jDialog-content {
+  opacity: 0;
+  @include transform(translateY(-200%));
+  @include transition(all .3s);
+}
+
+.sticky-up.jDialog.show .jDialog-content {
+  opacity: 1;
+  border-radius: 0 0 3px 3px;
+  @include transform(translateY(0%));
+}
+
+// slide-in
+
+.slide-in.jDialog .jDialog-content {
+  opacity: 0;
+  @include transform(translateX(20%));
+  @include transition(all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9));
+}
+
+.slide-in.jDialog.show .jDialog-content {
+  opacity: 1;
+  @include transform(translateX(0));
+}
+
+// flip
+
+.flip.jDialog {
+  @include perspective(1300px);
+}
+
+.flip.jDialog .jDialog-content {
+  opacity: 0;
+  @include transform-style(preserve-3d);
+  @include transform(rotateY(-70deg));
+  @include transition(all 0.3s);
+}
+
+.flip.jDialog.show .jDialog-content {
+  opacity: 1;
+  @include transform(rotateY(0deg));
+}
+
