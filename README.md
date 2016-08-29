@@ -29,7 +29,7 @@ Finally, init your dialog.
 ```javascript
 $("#dialog").jDialog({
     skinClassName: 'demo',        // add your custom class to the dialog
-    allowOverlay: true            // whether to show overlay, default true
+    allowOverlay: true,           // whether to show overlay, default true
     animationType: 'fade-in',     // select how to animate the dialog
                                   // try 'fade-in', 'sticky-up', 'slide-in' and 'flip'
 });
